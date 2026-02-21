@@ -42,4 +42,4 @@ jobs:
 
       # Step 6: Output image URI
       - name: Image URI
-        run: echo "Image pushed: ${{ steps.ecr-login.outputs.registry }}/${{ secrets.ECR_REPOSITORY }}:${GITHUB_SHA::8}"
+        run: echo "Image pushed ${{ steps.ecr-login.outputs.registry }}/${{ secrets.ECR_REPOSITORY }}:${GITHUB_SHA::8}"
