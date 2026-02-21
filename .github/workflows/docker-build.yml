@@ -19,5 +19,3 @@ jobs:
       - name: Build Docker image
         run: |
           docker build -t hello-world-html:latest .
-        run: echo "Docker Image Build Successfully !"
-        run : docker images
