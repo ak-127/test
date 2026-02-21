@@ -28,5 +28,5 @@ jobs:
       # 4️⃣ Build and push Docker image
       - name: Build and Push
         run: |
-          docker build -t yourdockerhubusername/hello-world-html:latest .
-          docker push yourdockerhubusername/hello-world-html:latest
+          docker build -t ak-1921/hello-world-html:latest .
+          docker push ak-1921/hello-world-html:latest
