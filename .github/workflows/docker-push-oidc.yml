@@ -58,12 +58,10 @@ jobs:
           IMAGE_TAG: ${{ steps.release.outputs.new-tag }}
           ECR_REGISTRY: ${{ steps.ecr-login.outputs.registry }}
         run: |
-          # Update the image on the existing deployment (rolling update)
           kubectl set image deployment/${{ secrets.K8S_DEPLOYMENT_NAME }} \
-            ${{ secrets.K8S_DEPLOYMENT_NAME }}=$ECR_REGISTRY/${{ secrets.ECR_REPOSITORY }}:$IMAGE_TAG \
+            "*=$ECR_REGISTRY/${{ secrets.ECR_REPOSITORY }}:$IMAGE_TAG" \
             --namespace ${{ secrets.K8S_NAMESPACE }}
 
-          # Wait for the rollout to complete
           kubectl rollout status deployment/${{ secrets.K8S_DEPLOYMENT_NAME }} \
             --namespace ${{ secrets.K8S_NAMESPACE }} \
             --timeout=120s
