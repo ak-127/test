@@ -32,7 +32,8 @@ jobs:
       - name: Release new version
         id: release
         run: |
-          bash ./scripts/git_update.sh -v patch
+          bash ./scripts/git_update.sh -v minor 
+        # Update argument accordingly major, minor, patch
 
       - name: Build, tag, and push Docker image to Amazon ECR
         env:
