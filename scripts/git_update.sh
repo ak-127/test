@@ -20,23 +20,23 @@ then
 fi
 echo "Current Version: $CURRENT_VERSION"
 
-# # replace . with space so can split into an array
-# CURRENT_VERSION_PARTS=(${CURRENT_VERSION//./ })
+# replace . with space so can split into an array
+CURRENT_VERSION_PARTS=(${CURRENT_VERSION//./ })
 
-# # get number parts
-# VNUM1=${CURRENT_VERSION_PARTS[0]}
-# VNUM2=${CURRENT_VERSION_PARTS[1]}
-# VNUM3=${CURRENT_VERSION_PARTS[2]}
+# get number parts
+VNUM1=${CURRENT_VERSION_PARTS[0]}
+VNUM2=${CURRENT_VERSION_PARTS[1]}
+VNUM3=${CURRENT_VERSION_PARTS[2]}
 
-# Remove leading v
-CURRENT_VERSION=${CURRENT_VERSION#v}
+# # Remove leading v
+# CURRENT_VERSION=${CURRENT_VERSION#v}
 
-IFS='.' read -r VNUM1 VNUM2 VNUM3 <<< "$CURRENT_VERSION"
+# IFS='.' read -r VNUM1 VNUM2 VNUM3 <<< "$CURRENT_VERSION"
 
-# Ensure defaults
-VNUM1=${VNUM1:-0}
-VNUM2=${VNUM2:-0}
-VNUM3=${VNUM3:-0}
+# # Ensure defaults
+# VNUM1=${VNUM1:-0}
+# VNUM2=${VNUM2:-0}
+# VNUM3=${VNUM3:-0}
 
 if [[ $VERSION == 'major' ]]
 then
